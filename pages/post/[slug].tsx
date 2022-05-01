@@ -21,7 +21,11 @@ interface Props {
 function Post({ post }: Props) {
   
   const [submitted, setSubmitted] = useState(false)
-  const { register, handleSubmit, formState: { errors }} = useForm<FormInput>()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<FormInput>()
 
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     await fetch('/api/createComment', {
@@ -29,11 +33,20 @@ function Post({ post }: Props) {
       body: JSON.stringify(data)
     }).then(() => {
       console.log(data)
-      setSubmitted(true)
     }).catch(err => {
       alert(err)
-      setSubmitted(false)
     })
+    
+    
+    // await fetch('/api/createComment', {
+    //   method: 'POST',
+    //   body: JSON.stringify(data)
+    // }).then(() => {
+    //   setSubmitted(true)
+    // }).catch(err => {
+    //   alert(err)
+    //   setSubmitted(false)
+    // })
   }
 
   return (
@@ -192,7 +205,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const query = `
-  *[_type == "post" && slug.current == "my-first-post"][0]{
+  *[_type == "post" && slug.current == $slug][0]{
     _id,
     _createdAt,
     title,
