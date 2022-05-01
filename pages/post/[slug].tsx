@@ -33,21 +33,11 @@ function Post({ post }: Props) {
       body: JSON.stringify(data)
     }).then(() => {
       console.log(data)
+      setSubmitted(true)
     }).catch(err => {
       alert(err)
-    })
-    
-    
-    // await fetch('/api/createComment', {
-    //   method: 'POST',
-    //   body: JSON.stringify(data)
-    // }).then(() => {
-    //   setSubmitted(true)
-    // }).catch(err => {
-    //   alert(err)
-    //   setSubmitted(false)
-    // })
-  }
+      setSubmitted(false)
+    })}
 
   return (
     <main>
