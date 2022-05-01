@@ -5,4 +5,4 @@
 - Tailwind CSS
 - React Hook Forms
 
-Live version: [Click me!](https://nextjs-medium-clone-3lducola5-paciodev.vercel.app)
+Live version: [Click me!](https://nextjs-medium-clone-paciodev.vercel.app)
