@@ -5,4 +5,6 @@
 - Tailwind CSS
 - React Hook Forms
 
-Live version: [Click me!](https://nextjs-medium-clone-paciodev.vercel.app)
+Live version: <a href="https://nextjs-medium-clone-paciodev.vercel.app" target="_blank">Click me</a>
+
+(comments do **not** work) 😥
